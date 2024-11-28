@@ -1,35 +1,58 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import Header from "./Components/Header"
+import RegisterForm from './Components/RegisterForm'
+import Collection from "./Components/Collection"
+import Footer from "./Components/Footer"
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    /**
+     * -header
+     *       -logo
+     *       -nav items
+     *       -login/Signup
+     *
+     * -body
+     *      -heading
+     *      -paragraph description
+     *      -search bar
+     *      -cards
+     *            -order online
+     *            -Dining
+     *            -Live events
+     *      -Collection Card
+     *            -Paragraph
+     *            -link (right side)
+     *            -Restaurant Lists
+     *                             -Restuarant Card
+     *                             -image
+     *                             -name
+     *                             -rating
+     *            -Registration form
+     *                              -image(left side)
+     *                              -Title(right side)
+     *                              -description paragraph
+     *                              -form
+     *                                   -option
+     *                                          -email
+     *                                          -phone
+     *                                   -input type email
+     *                                   -button submit
+     *                                   -icons
+     *            -Restuarant lists
+     *
+     * -footer
+     *        -links
+     *        -copyrights
+     */
+    <div className="bg-white text-black min-w-screen-lg">
+      <Header/>
+      <Collection />
+      <RegisterForm/>
+      <Footer/>
+    </div>
+  );
 }
 
-export default App
+export default App;
