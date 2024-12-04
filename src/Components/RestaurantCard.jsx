@@ -10,6 +10,7 @@ function RestaurantCard ({
   costForTwoString,
   avgRating
 }) {
+
     return (
       <div>
         <div className="card">

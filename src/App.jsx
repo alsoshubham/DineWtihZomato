@@ -21,7 +21,7 @@ function App() {
      *            -order online
      *            -Dining
      *            -Live events
-     *      -Collection Card
+     *      -Collection
      *            -Paragraph
      *            -link (right side)
      *            -Restaurant Lists

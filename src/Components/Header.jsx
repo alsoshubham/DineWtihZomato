@@ -1,6 +1,7 @@
-/* eslint-disable react/no-unescaped-entities */
-// import QuickSearchItems from "./Constant"
-// import QuickSearch from "./QuickSearch";
+import {QuickSearchList} from "./Constant"
+import QuickSearch from "./QuickSearch";
+import {Link} from  "react-router-dom";
+import { useState, useNavigate } from "react";
 const Title = () => {
   return (
     <div>
@@ -12,16 +13,35 @@ const Title = () => {
 };
 
 function Header() {
+  const [isLoggedin, setIsLoggedin] = useState(true);
+  const navigate = useNavigate();
   return (
     <div>
       <div className="flex justify-evenly">
         <Title />
         <div className="flex">
           <ul className="flex justify-around">
-            <li>Investor relation</li>
-            <li>Add Restaurant</li>
-            <li>Login</li>
-            <li>Signup</li>
+            <li>
+              <Link to="/">LinkInvestor relation</Link>
+              </li>
+            <li>
+              <Link to="/">Add Restaurant</Link>
+            </li>
+            <li>
+            {/* use conditional rendering for login and logout */}
+            {isLoggedin ? (
+              <button
+                className="logout-btn"
+                onClick={() => setIsLoggedin(false)}
+              >
+                Logout
+              </button>
+            ) : (
+              <button className="login-btn" onClick={() => navigate("/login")}>
+                Login
+              </button>
+            )}
+          </li>
           </ul>
         </div>
       </div>
@@ -37,13 +57,14 @@ function Header() {
           />
         </div>
       </div>
-      <div className="flex flex-column gap-10">
+      {/* <div className="flex flex-column gap-10">
         <div>
           <img src="" alt="" />
           <h4>Order Online</h4>
           <p>Stay home and order to your doorstep</p>
         </div>
         <div>
+
           <img src="" alt="" />
           <h4>Dining</h4>
           <p>View the city's favourite dining venue</p>
@@ -53,16 +74,16 @@ function Header() {
           <h4>Live Events</h4>
           <p>Discover India's best events and concerts</p>
         </div>
-      </div>
-      {/* <div className="QuickSearchItems">
+      </div> */}
+      <div className="QuickSearch">
         {
-          QuickSearchItems.map(()=>{
+          QuickSearchList.map((items)=>{
             return(
-              <QuickSearch/>
+              <QuickSearch key={items.data.categoryType}{...items.data}/>
             )
           })
         }
-      </div> */}
+      </div>
     </div>
   );
 }
