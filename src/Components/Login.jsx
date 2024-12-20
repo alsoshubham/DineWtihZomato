@@ -1,8 +1,7 @@
-import { Formik } from "formik"; // import Formik from formik
-import * as Yup from "yup"; // import Yup from yup
+import { Formik } from "formik";
+import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 
-// create a schema for validation
 const schema = Yup.object().shape({
   email: Yup.string()
     .required("Email is a required field")
@@ -16,21 +15,17 @@ const Login = () => {
   const navigate = useNavigate();
 
   function handleNavigate(values) {
-    // Alert the input values of the form that we filled
     alert(values);
-    // setTimeout for navigate from login page to home page
     setTimeout(() => {
       navigate("/");
     }, 0);
   }
   return (
     <>
-      {/* Wrapping form inside formik tag and passing our schema to validationSchema prop */}
       <Formik
         validationSchema={schema}
         initialValues={{ email: "", password: "" }}
         onSubmit={(values) => {
-          // call handleNavigate and pass input filed data
           handleNavigate(JSON.stringify(values));
         }}
       >

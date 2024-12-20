@@ -1,7 +1,8 @@
-import {QuickSearchList} from "./Constant"
+import { QuickSearchList } from "./Constant";
 import QuickSearch from "./QuickSearch";
-import {Link} from  "react-router-dom";
-import { useState, useNavigate } from "react";
+import { Link } from "react-dom";
+import { useState, useNavigate } from "react-dom";
+
 const Title = () => {
   return (
     <div>
@@ -22,26 +23,29 @@ function Header() {
         <div className="flex">
           <ul className="flex justify-around">
             <li>
-              <Link to="/">LinkInvestor relation</Link>
-              </li>
+              <Link to="/">Investor relation</Link>
+            </li>
             <li>
               <Link to="/">Add Restaurant</Link>
             </li>
             <li>
-            {/* use conditional rendering for login and logout */}
-            {isLoggedin ? (
-              <button
-                className="logout-btn"
-                onClick={() => setIsLoggedin(false)}
-              >
-                Logout
-              </button>
-            ) : (
-              <button className="login-btn" onClick={() => navigate("/login")}>
-                Login
-              </button>
-            )}
-          </li>
+              {/* used conditional rendering for login and logout */}
+              {isLoggedin ? (
+                <button
+                  className="logout-btn"
+                  onClick={() => setIsLoggedin(false)}
+                >
+                  Logout
+                </button>
+              ) : (
+                <button
+                  className="login-btn"
+                  onClick={() => navigate("/login")}
+                >
+                  Login
+                </button>
+              )}
+            </li>
           </ul>
         </div>
       </div>
@@ -57,32 +61,10 @@ function Header() {
           />
         </div>
       </div>
-      {/* <div className="flex flex-column gap-10">
-        <div>
-          <img src="" alt="" />
-          <h4>Order Online</h4>
-          <p>Stay home and order to your doorstep</p>
-        </div>
-        <div>
-
-          <img src="" alt="" />
-          <h4>Dining</h4>
-          <p>View the city's favourite dining venue</p>
-        </div>
-        <div>
-          <img src="" alt="" />
-          <h4>Live Events</h4>
-          <p>Discover India's best events and concerts</p>
-        </div>
-      </div> */}
       <div className="QuickSearch">
-        {
-          QuickSearchList.map((items)=>{
-            return(
-              <QuickSearch key={items.data.categoryType}{...items.data}/>
-            )
-          })
-        }
+        {QuickSearchList.map((items) => {
+          return <QuickSearch key={items.data.categoryType} {...items.data} />;
+        })}
       </div>
     </div>
   );
