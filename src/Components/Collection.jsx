@@ -1,4 +1,4 @@
-import restaurantList from './Constant'
+import {restaurantList} from './Constant'
 import RestaurantCard from './RestaurantCard';
 function Collection () {
     return (

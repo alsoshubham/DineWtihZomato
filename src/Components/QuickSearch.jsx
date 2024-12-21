@@ -10,7 +10,7 @@ function QuickSearch({
   return (
     <div>
       <div className="card">
-        <img src={url} alt={img} />
+        <img src={img} alt={title} />
         <h2>{title}</h2>
         <h4>{subtitle}</h4>
       </div>

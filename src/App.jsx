@@ -3,7 +3,6 @@ import Header from "./Components/Header"
 import RegisterForm from './Components/RegisterForm'
 import Collection from "./Components/Collection"
 import Footer from "./Components/Footer"
-
 function App() {
 
   return (
@@ -48,7 +47,7 @@ function App() {
      */
     <div className="bg-white text-black min-w-screen-lg">
       <Header/>
-      <Collection />
+      <Collection/>
       <RegisterForm/>
       <Footer/>
     </div>

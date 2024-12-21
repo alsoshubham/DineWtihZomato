@@ -1,7 +1,8 @@
 import { QuickSearchList } from "./Constant";
 import QuickSearch from "./QuickSearch";
-import { Link } from "react-dom";
-import { useState, useNavigate } from "react-dom";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Title = () => {
   return (
@@ -16,6 +17,14 @@ const Title = () => {
 function Header() {
   const [isLoggedin, setIsLoggedin] = useState(true);
   const navigate = useNavigate();
+
+  const handleLogin = () => {
+    const isLoggedin = true;
+
+    if (isLoggedin) {
+      navigate("/");
+    }
+  };
   return (
     <div>
       <div className="flex justify-evenly">
@@ -38,10 +47,7 @@ function Header() {
                   Logout
                 </button>
               ) : (
-                <button
-                  className="login-btn"
-                  onClick={() => navigate("/login")}
-                >
+                <button className="login-btn" onClick={handleLogin}>
                   Login
                 </button>
               )}

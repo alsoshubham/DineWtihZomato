@@ -1,4 +1,4 @@
-const restaurantList = [
+export const restaurantList = [
     {
       type: "restaurant",
       data: {
@@ -1822,9 +1822,10 @@ const restaurantList = [
       subtype: "basic",
     },
   ];
-export default restaurantList
 
-//  export const QuickSearchItems = [
+
+
+  //  export const QuickSearchItems = [
 //     {
 //       page_data: {
 //         sections: {
@@ -1867,7 +1868,7 @@ export default restaurantList
           type: "items",
           data:{
             title: "Order Online",
-            img: "https://b.zmtcdn.com/webFrontend/e5b8785c257af2a7f354f1addaf37e4e1647364814.jpeg?output-format=webp",
+            img: "https://b.zmtcdn.com/webFrontend/e5b8785c257af2a7f354f1addaf37e4e1647364814.jpeg",
             url: "https://www.zomato.com/ncr/order-food-online?delivery_subzone=316",
             subtitle: "Stay home and order to your doorstep",
             categoryType: "delivery",
@@ -1877,7 +1878,7 @@ export default restaurantList
           type:"items",
           data:{
             title: "Dining",
-            img: "https://b.zmtcdn.com/webFrontend/d026b357feb0d63c997549f6398da8cc1647364915.jpeg?output-format=webp",
+            img: "https://b.zmtcdn.com/webFrontend/d026b357feb0d63c997549f6398da8cc1647364915.jpeg",
             url: "https://www.zomato.com/ncr/dine-out",
             subtitle: "View the city's favourite dining venues",
             categoryType: "dineout",
@@ -1887,10 +1888,30 @@ export default restaurantList
           type:"items",
           data:{
             title: "Live Events",
-            img: "https://b.zmtcdn.com/data/o2_assets/371de657644f1b5818fcb5d83387c8c91722851940.png?output-format=webp",
+            img: "https://b.zmtcdn.com/data/o2_assets/371de657644f1b5818fcb5d83387c8c91722851940.png",
             url: "https://www.zomato.com/live/city/delhi-ncr/events",
             subtitle: "Discover India’s best events & concerts",
             categoryType: "zlive",
           }
         },
   ]
+
+//   // Image CDN URL for Restaurant card
+// export const IMG_CDN_URL = `${process.env.REACT_MEDIA_ASSETS_BASE_URL}image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/`;
+
+// // Image CDN URL for Restaurant Menu
+// export const ITEM_IMG_CDN_URL = `${process.env.REACT_MEDIA_ASSETS_BASE_URL}image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/`;
+
+// // Swiggy API to get Restaurant data using foodfire server
+// export const FOODFIRE_API_URL = `${process.env.REACT_FOODFIRE_APP_BASE_URL}restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING`;
+
+// // Swiggy API to get Restaurant Menu data using foodfire server
+// export const FOODFIRE_MENU_API_URL = `${process.env.REACT_FOODFIRE_APP_BASE_URL}menu?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&&submitAction=ENTER&restaurantId=`;
+
+// shimmer card unit
+export const shimmer_card_unit = 20;
+
+// shimmer Menu card unit
+export const shimmer_menu_card_unit = 10;
+
+export const RESTAURANT_CARD_IMG_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660"

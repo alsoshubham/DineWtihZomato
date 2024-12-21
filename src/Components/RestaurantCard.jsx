@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import { IoStarSharp } from "react-icons/io5";
+import { RESTAURANT_CARD_IMG_URL } from "./Constant";
 
 function RestaurantCard ({
-  // cloudinaryImageId,
+  cloudinaryImageId,
   name,
   cuisines,
   area,
@@ -11,10 +12,12 @@ function RestaurantCard ({
   avgRating
 }) {
 
+  console.log("####", cloudinaryImageId)
+
     return (
       <div>
         <div className="card">
-          {/* <img src={IMG_CDN_URL + cloudinaryImageId} /> */}
+          <img src={`${RESTAURANT_CARD_IMG_URL}/${cloudinaryImageId}`} />
           <h2>{name}</h2>
           <h4>{cuisines.join(", ")}</h4>
           <h4>{area}</h4>
