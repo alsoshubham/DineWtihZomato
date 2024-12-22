@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"; 
+import { useParams } from "react-router-dom";
 import {
   FOODFIRE_MENU_API_URL,
   IMG_CDN_URL,
@@ -10,7 +10,7 @@ import {
 import { MenuShimmer } from "./Shimmer";
 
 const RestaurantMenu = () => {
-  const { resId } = useParams(); // get restaurant id from url
+  const { resId } = useParams(); // get restaurant id from url 
   const [restaurant, setRestaurant] = useState(null); // state variable to store restaurant data
   const [menuItems, setMenuItems] = useState([]);
   useEffect(() => {

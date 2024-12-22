@@ -1823,46 +1823,6 @@ export const restaurantList = [
     },
   ];
 
-
-
-  //  export const QuickSearchItems = [
-//     {
-//       page_data: {
-//         sections: {
-//           SECTION_QUICK_SEARCH: {
-//             items: [
-//               {
-//                 title: "Order Online",
-//                 img: "https://b.zmtcdn.com/webFrontend/e5b8785c257af2a7f354f1addaf37e4e1647364814.jpeg?output-format=webp",
-//                 url: "https://www.zomato.com/ncr/order-food-online?delivery_subzone=316",
-//                 subtitle: "Stay home and order to your doorstep",
-//                 categoryType: "delivery",
-//               },
-//               {
-//                 title: "Dining",
-//                 img: "https://b.zmtcdn.com/webFrontend/d026b357feb0d63c997549f6398da8cc1647364915.jpeg?output-format=webp",
-//                 url: "https://www.zomato.com/ncr/dine-out",
-//                 subtitle: "View the city's favourite dining venues",
-//                 categoryType: "dineout",
-//               },
-//               {
-//                 title: "Live Events",
-//                 img: "https://b.zmtcdn.com/data/o2_assets/371de657644f1b5818fcb5d83387c8c91722851940.png?output-format=webp",
-//                 url: "https://www.zomato.com/live/city/delhi-ncr/events",
-//                 subtitle: "Discover India’s best events & concerts",
-//                 categoryType: "zlive",
-//               },
-//             ],
-//             has_zomaland: false,
-//           },
-//         },
-//         isO2Country: true,
-//         trackingData: null,
-//       },
-//       entities: [],
-//     },
-//   ];
-
   export const QuickSearchList = [
         {
           type: "items",
@@ -1896,7 +1856,7 @@ export const restaurantList = [
         },
   ]
 
-//   // Image CDN URL for Restaurant card
+// // Image CDN URL for Restaurant card
 // export const IMG_CDN_URL = `${process.env.REACT_MEDIA_ASSETS_BASE_URL}image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/`;
 
 // // Image CDN URL for Restaurant Menu

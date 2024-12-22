@@ -3,6 +3,7 @@ import QuickSearch from "./QuickSearch";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Body from "./Body";
 
 const Title = () => {
   return (
@@ -25,7 +26,7 @@ function Header() {
       navigate("/");
     }
   };
-  return (
+  return !isLoggedin ? (
     <div>
       <div className="flex justify-evenly">
         <Title />
@@ -38,19 +39,9 @@ function Header() {
               <Link to="/">Add Restaurant</Link>
             </li>
             <li>
-              {/* used conditional rendering for login and logout */}
-              {isLoggedin ? (
-                <button
-                  className="logout-btn"
-                  onClick={() => setIsLoggedin(false)}
-                >
-                  Logout
-                </button>
-              ) : (
-                <button className="login-btn" onClick={handleLogin}>
-                  Login
-                </button>
-              )}
+              <button className="login-btn" onClick={handleLogin}>
+                Login
+              </button>
             </li>
           </ul>
         </div>
@@ -66,6 +57,27 @@ function Header() {
             className="bg-white text-black"
           />
         </div>
+      </div>
+      <div className="QuickSearch">
+        {QuickSearchList.map((items) => {
+          return <QuickSearch key={items.data.categoryType} {...items.data} />;
+        })}
+      </div>
+    </div>
+  ) : (
+    <div>
+      <div className="flex justify-evenly">
+        <Title />
+        <div className="flex">
+          <button className="logout-btn" onClick={() => setIsLoggedin(false)}>
+            Logout
+          </button>
+        </div>
+      </div>
+      <div>
+        <h1>Zomato</h1>
+        <p>Discover the best food & drinks in Delhi NCR</p>
+        <Body />
       </div>
       <div className="QuickSearch">
         {QuickSearchList.map((items) => {
