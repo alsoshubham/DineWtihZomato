@@ -9,8 +9,8 @@ function QuickSearch({
 }) {
   return (
     <div>
-      <div className="card">
-        <img src={img} alt={title} />
+      <div className="card aspect-ratio-1/1 border-1 solid border-black">
+        <img className="w-366 h-260" src={img} alt={title} />
         <h2>{title}</h2>
         <h4>{subtitle}</h4>
       </div>

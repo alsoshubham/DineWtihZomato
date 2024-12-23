@@ -49,12 +49,12 @@ function Header() {
       <div>
         <h1>Zomato</h1>
         <p>Discover the best food & drinks in Delhi NCR</p>
-        <div className=" flex gap-5">
-          <input type="label" className="bg-white "></input>
+        <div className=" flex gap-5 justify-center">
+          <input type= "search" placeholder="enter your delivery location" className="search-input bg-transparent border-1 solid border-black min-w-fit"></input>
           <input
             type="search"
             placeholder="Search for restuarant, cuisines, or dish"
-            className="bg-white text-black"
+            className="search-input bg-transparent border-1 solid border-black"
           />
         </div>
       </div>
@@ -79,7 +79,7 @@ function Header() {
         <p>Discover the best food & drinks in Delhi NCR</p>
         <Body />
       </div>
-      <div className="QuickSearch">
+      <div className="QuickSearch flex justify-around gap-5 ">
         {QuickSearchList.map((items) => {
           return <QuickSearch key={items.data.categoryType} {...items.data} />;
         })}
