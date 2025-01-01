@@ -1,19 +1,21 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-import React from "react"
+import { Link } from "react-router-dom"
+
 function QuickSearch({
-  title,
-  img,
-  url,
-  subtitle,
+  title, // The title to be displayed in the card
+  img, // The URL of the image to be displayed in the card
+  url, // The URL for the card link
+  subtitle, // The subtitle to be displayed in the card
 }) {
   return (
-    <div>
-      <div className="card aspect-ratio-1/1 border-1 solid border-black">
-        <img className="w-366 h-260" src={img} alt={title} />
-        <h2>{title}</h2>
-        <h4>{subtitle}</h4>
-      </div>
+    <div className="flex justify-center items-center w-full">
+      <Link to={url} className="no-underline text-inherit hover:text-black">
+        <div className="w-72 h-96 flex flex-col justify-between items-center p-4 border border-transparent shadow-lg transition-transform transform hover:scale-105 rounded-lg">
+          <img className="w-full h-3/5 object-cover rounded-t-lg" src={img} alt={title} /> {/* Image with the provided URL and alt text */}
+          <h2 className="text-xl font-semibold text-start text-black">{title}</h2> {/* Title displayed as a heading */}
+          <h4 className="text-lg text-start text-black">{subtitle}</h4> {/* Subtitle displayed as a subheading */}
+        </div>
+      </Link>
     </div>
   )
 }

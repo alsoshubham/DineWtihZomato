@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { FiUser } from "react-icons/fi";
+import { FaLocationDot } from "react-icons/fa6";
 import Body from "./Body";
 
 const Title = () => {
@@ -18,7 +19,7 @@ const Title = () => {
 };
 
 function Header() {
-  const [isLoggedin, setIsLoggedin] = useState(true); //kya initially login hai ya nahi 
+  const [isLoggedin, setIsLoggedin] = useState(true); //kya initially login hai ya nahi
   const navigate = useNavigate();
 
   return !isLoggedin ? (
@@ -50,20 +51,23 @@ function Header() {
               </button>
             </li>
             <li>
-            {isLoggedin ? (
-              <button
-                className="logout-btn bg-transparent hover:border-red-500"
-                onClick={() => {
-                  setIsLoggedin(false);
-                }}
-              >
-                Logout
-              </button>
-            ) : (
-              <button className="login-btn bg-transparent hover:border-green-500" onClick={() => navigate("/login")}>
-                <FiUser />
-              </button>
-            )}
+              {isLoggedin ? (
+                <button
+                  className="logout-btn bg-transparent hover:border-red-500"
+                  onClick={() => {
+                    setIsLoggedin(false);
+                  }}
+                >
+                  Logout
+                </button>
+              ) : (
+                <button
+                  className="login-btn bg-transparent hover:border-green-500"
+                  onClick={() => navigate("/login")}
+                >
+                  <FiUser />
+                </button>
+              )}
             </li>
             <li>
               <button className="partner-btn bg-green-600 border-1 solid border-transparent rounded-md">
@@ -78,16 +82,19 @@ function Header() {
       <div>
         <h1>Zomato</h1>
         <p>Discover the best food & drinks in Delhi NCR</p>
-        <div className=" flex gap-5 justify-center min-w-fit">
+        <div className="search flex justify-center items-center mx-auto w-3/4 max-w-lg">
+          <FaLocationDot className="mr-2 text-red-500" />
+          <select className="select-location bg-transparent border-1 solid border-gray-500 w-1/2 p-2">
+            <option type="text" value="" disabled selected>
+              Enter your delivery location
+            </option>
+            <option value="Delhi">Delhi</option>
+            <option value="Noida">Noida</option>
+          </select>
           <input
             type="search"
-            placeholder="enter your delivery location"
-            className="search-input bg-transparent border-1 solid border-black min-w-fit"
-          ></input>
-          <input
-            type="search"
-            placeholder="Search for restuarant, cuisines, or dish"
-            className="search-input bg-transparent border-1 solid border-black"
+            placeholder="Search for restaurant, cuisines, or dish"
+            className="search-input bg-transparent border-1 solid border-gray-500 w-1/2 p-2 ml-2"
           />
         </div>
       </div>

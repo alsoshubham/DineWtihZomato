@@ -1829,7 +1829,7 @@ export const restaurantList = [
           data:{
             title: "Order Online",
             img: "https://b.zmtcdn.com/webFrontend/e5b8785c257af2a7f354f1addaf37e4e1647364814.jpeg",
-            url: "https://www.zomato.com/ncr/order-food-online?delivery_subzone=316",
+            url: "",
             subtitle: "Stay home and order to your doorstep",
             categoryType: "delivery",
           }
@@ -1839,7 +1839,7 @@ export const restaurantList = [
           data:{
             title: "Dining",
             img: "https://b.zmtcdn.com/webFrontend/d026b357feb0d63c997549f6398da8cc1647364915.jpeg",
-            url: "https://www.zomato.com/ncr/dine-out",
+            url: "",
             subtitle: "View the city's favourite dining venues",
             categoryType: "dineout",
           }

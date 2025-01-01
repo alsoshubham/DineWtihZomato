@@ -13,10 +13,10 @@ function App() {
      *       -login/Signup
      *
      * -body
-     *      -heading
+     *      -title
      *      -paragraph description
      *      -search bar
-     *      -cards
+     *      -cards ( <quicksearch/> )
      *            -order online
      *            -Dining
      *            -Live events
