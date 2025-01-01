@@ -81,13 +81,6 @@ const Body = () => {
     <>
       {/* Search bar for searching restaurants */}
       <div className="search flex justify-center items-center mx-auto w-3/4 max-w-lg">
-        <select className="select-location bg-transparent border-1 solid border-gray-500 w-1/2 p-2">
-          <option type="text" value="" disabled selected>
-            Enter your delivery location
-          </option>
-          <option value="Delhi">Delhi</option>
-          <option value="Noida">Noida</option>
-        </select>
         <input
           type="search"
           placeholder="Search a restaurant you want..."

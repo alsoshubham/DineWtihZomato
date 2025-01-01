@@ -1832,6 +1832,7 @@ export const restaurantList = [
             url: "",
             subtitle: "Stay home and order to your doorstep",
             categoryType: "delivery",
+            route: "/Restaurant",
           }
         },
         {
@@ -1842,6 +1843,7 @@ export const restaurantList = [
             url: "",
             subtitle: "View the city's favourite dining venues",
             categoryType: "dineout",
+            route: "/dineout",
           }
         },
         {

@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom"
 
+// QuickSearch component to display the quick search cards on the home page like "Online Delivery", "Dine-out", etc.
+
 function QuickSearch({
   title, // The title to be displayed in the card
   img, // The URL of the image to be displayed in the card

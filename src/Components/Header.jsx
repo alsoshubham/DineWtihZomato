@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { FiUser } from "react-icons/fi";
 import { FaLocationDot } from "react-icons/fa6";
-import Body from "./Body";
+import Body from "./SearchBar";
 
 const Title = () => {
   return (

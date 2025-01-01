@@ -2,6 +2,8 @@
 import { IoStarSharp } from "react-icons/io5";
 import { RESTAURANT_CARD_IMG_URL } from "./Constant";
 
+// RestaurantCard component to structure the food card with the provided details like name, cuisines, area, etc.
+
 function RestaurantCard({
   cloudinaryImageId,
   name,
