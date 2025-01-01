@@ -1,6 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
-import { useEffect, useState } from "react"; 
-import Shimmer from "./Shimmer"; 
+import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 
 // Filter the restaurant data according input type
@@ -13,7 +13,7 @@ function filterData(searchText, restaurants) {
 
 // Body Component for body section: It contain all restaurant cards
 const Body = () => {
-  // useState: To create a state variable, searchText, allRestaurants and filteredRestaurants is local state variable
+  // useState: To create a state vari able, searchText, allRestaurants and filteredRestaurants is local state variable
   const [searchText, setSearchText] = useState("");
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
@@ -28,7 +28,7 @@ const Body = () => {
   async function getRestaurants() {
     // handle the error using try... catch
     try {
-      const response = await fetch( /* fetch Swiggy API data */ );
+      const response = await fetch(/* fetch Swiggy API data */);
       const json = await response.json();
 
       // initialize checkJsonData() function to check Swiggy Restaurant data
@@ -79,17 +79,25 @@ const Body = () => {
 
   return (
     <>
-      <div className="search-container gap-4">
+      {/* Search bar for searching restaurants */}
+      <div className="search flex justify-center items-center mx-auto w-3/4 max-w-lg">
+        <select className="select-location bg-transparent border-1 solid border-gray-500 w-1/2 p-2">
+          <option type="text" value="" disabled selected>
+            Enter your delivery location
+          </option>
+          <option value="Delhi">Delhi</option>
+          <option value="Noida">Noida</option>
+        </select>
         <input
-          type="text"
-          className="search-input bg-transparent border-1 solid border-black"
+          type="search"
           placeholder="Search a restaurant you want..."
+          className="search-input bg-transparent border-1 solid border-gray-500 w-1/2 p-2 ml-2"
           value={searchText}
           // update the state variable searchText when we typing in input box
           onChange={(e) => setSearchText(e.target.value)}
-        ></input>
+        />
         <button
-          className="search-btn bg-transparent border-1 solid border-black"
+          className="search-btn bg-transparent solid hover:border-red-500 p-2 ml-2"
           onClick={() => {
             // user click on button searchData function is called
             searchData(searchText, allRestaurants);
