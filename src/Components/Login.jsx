@@ -1,85 +1,67 @@
-import { Formik } from "formik";
-import * as Yup from "yup";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-const schema = Yup.object().shape({
-  email: Yup.string()
-    .required("Email is a required field")
-    .email("Invalid email format"),
-  password: Yup.string()
-    .required("Password is a required field")
-    .min(8, "Password must be at least 8 characters"),
-});
-
-const Login = () => {
+function Login() {
   const navigate = useNavigate();
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [loginMethod, setLoginMethod] = useState("");
 
-  function handleNavigate(values) {
-    alert(values);
-    setTimeout(() => {
-      navigate("/");
-    }, 0);
-  }
+  const handleSendOTP = () => {
+    if (loginMethod === "phone") {
+      alert(`OTP sent to ${phone}`);
+    } else {
+      alert(`Login link sent to ${email}`);
+    }
+  };
+
   return (
-    <>
-      <Formik
-        validationSchema={schema}
-        initialValues={{ email: "", password: "" }}
-        onSubmit={(values) => {
-          handleNavigate(JSON.stringify(values));
-        }}
-      >
-        {({
-          values,
-          errors,
-          touched,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-        }) => (
-          <div className="login-container">
-            <div className="login-form">
-              {/* Passing handleSubmit parameter to html form onSubmit property */}
-              <form noValidate onSubmit={handleSubmit}>
-                <span>Login</span>
-                {/* Our input html with passing formik parameters like handleChange, values, handleBlur to input properties */}
-                <input
-                  type="email"
-                  name="email"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.email}
-                  placeholder="Enter your email"
-                  className="form-control inp_text"
-                  id="email"
-                />
-                {/* If validation is not passed show errors */}
-                <p className="error">
-                  {errors.email && touched.email && errors.email}
-                </p>
-                {/* input with passing formik parameters like handleChange, values, handleBlur to input properties */}
-                <input
-                  type="password"
-                  name="password"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.password}
-                  placeholder="Enter your password"
-                  className="form-control"
-                />
-                {/* If validation is not passed show errors */}
-                <p className="error">
-                  {errors.password && touched.password && errors.password}
-                </p>
-                {/* Click on submit button to submit the form */}
-                <button type="submit">Login</button>
-              </form>
-            </div>
+    <div className="login-container flex justify-center items-center bg-slate-600 min-h-screen min-w-screen">
+      <div className="login-form flex p-5 ">
+        <form noValidate className="form flex flex-col gap-4">
+          <h2>Login</h2>
+          {loginMethod === "phone" ? (
+          <div className="phone-input">
+            <select className="country-code">
+              <option value="+91">+91</option>
+              {/* Add more country codes if needed */}
+            </select>
+            <input
+              type="text"
+              placeholder="Phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+          </div>
+        ) : (
+          <div className="email-input">
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
         )}
-      </Formik>
-    </>
+        <button className="send-otp" onClick={handleSendOTP}>
+          {loginMethod === "phone" ? "Send One Time Password" : "Send Login Link"}
+        </button>
+          <div>or</div>
+          {loginMethod === "phone" ? (
+          <button className="email-login" onClick={() => setLoginMethod("email")}>
+            Continue with Email
+          </button>
+        ) : (
+          <button className="phone-login" onClick={() => setLoginMethod("phone")}>
+            Continue with Phone
+          </button>
+        )}
+          <div>
+            <button className="google-login">Login with Google</button>
+          </div>
+          <button type="submit" onClick={() => navigate("/")}>Login</button>
+        </form>
+      </div>
+    </div>
   );
-};
-
+}
 export default Login;
