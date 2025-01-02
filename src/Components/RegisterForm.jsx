@@ -1,6 +1,6 @@
 import DynamicInput from "./dynamicInput";
 
-function RegisterForm() {
+function Register() {
   return (
     <form className="flex justify-center w-1250px h-480px">
       <div className="flex justify-between w-900px h-450px color-#FFFBF7">
@@ -56,4 +56,4 @@ function RegisterForm() {
   );
 }
 
-export default RegisterForm;
+export default Register;

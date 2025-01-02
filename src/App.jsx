@@ -1,55 +1,23 @@
 import "./App.css";
-import Header from "./Components/Header"
-import RegisterForm from './Components/RegisterForm'
-import Collection from "./Components/Collection"
-import Footer from "./Components/Footer"
-function App() {
+import Header from "./Components/Header";
+import RegisterForm from './Components/RegisterForm';
+import Collection from "./Components/Collection";
+import Footer from "./Components/Footer";
 
+function App() {
   return (
     /**
-     * -header
-     *       -logo
-     *       -nav items
-     *       -login/Signup
-     *
-     * -body
-     *      -title
-     *      -paragraph description
-     *      -search bar
-     *      -cards ( <quicksearch/> )
-     *            -order online
-     *            -Dining
-     *            -Live events
-     *      -Collection
-     *            -Paragraph
-     *            -link (right side)
-     *            -Restaurant Lists
-     *                             -Restuarant Card
-     *                             -image
-     *                             -name
-     *                             -rating
-     *            -Registration form
-     *                              -image(left side)
-     *                              -Title(right side)
-     *                              -description paragraph
-     *                              -form
-     *                                   -option
-     *                                          -email
-     *                                          -phone
-     *                                   -input type email
-     *                                   -button submit
-     *                                   -icons
-     *            -Restuarant lists
-     *
-     * -footer
-     *        -links
-     *        -copyrights
+     * Main structure of the App component
+     * - Header: Contains logo, navigation items, login/signup, and search bar
+     * - Collection: Displays restaurant collections
+     * - RegisterForm: Form for user registration
+     * - Footer: Contains links and copyright information
      */
     <div className="bg-white text-black min-w-screen-lg">
-      <Header/>
-      <Collection/>
-      <RegisterForm/>
-      <Footer/>
+      <Header />
+      <Collection />
+      <RegisterForm />
+      <Footer />
     </div>
   );
 }
